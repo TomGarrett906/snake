@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+    background: url('/images/snakeskin.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+
+/* body,
+.snake {
+  background-color: #414141;
+} */
+
+#game-board {
+  position: relative;
+  border-radius: 100px;
+  display: grid;
+  grid-template-columns: repeat(20, 20px);
+  grid-template-rows: repeat(20, 20px);
+  margin: 5px;
+
+}
+
+.game-border-1 {
+  border: #969696 solid 10px;
+  border-radius: 30px;
+  box-shadow: inset 0 0 0 10px #595f43;
+}
+
+.game-border-2 {
+  border: #bbbbbb solid 8px;
+  border-radius: 26px;
+  box-shadow: inset 0 0 0 10px #abb78a;
+}
+
+.game-border-3 {
+  border: #2d2d2d solid 30px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 5px #8b966c;
+}
+
+#instruction-text {
+  position: absolute;
+  top: 60%;
+  color: #000000;
+  width: 300px;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 30px;
+  margin: 0;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-between;
+}
+
+#score {
+  color: #ffffff;
+}
+
+#score,
+#highScore {
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 10px 0;
+}
+
+#highScore {
+  color: #d8ddca;
+  display: none;
+}
+
+.game-border-3,
+#logo {
+  background-color: #aac165;
+}
+
+.snake {
+  border-radius: 5%;
+  background-color: #595f43;
+}
+
+.snake:first-child {
+  background-color: #343727;
+  scale: 135%;
+  border-radius: 45%;
+}
+
+.food {
+  background: url("/images/apple.png");
+  background-size: cover;
+  scale: 135%;
+  /* border: #999 5px solid; */
+}
+
+#logo {
+  position: absolute;
+}
+
+
+
+/* MOBILE */
+#mobile-buttons {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+#mobile-buttons button {
+    font-size: 50px;
+    font-weight: bolder;
+    padding: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: #c7c7c7; /* Adjust background color */
+    border: 1px solid #777; /* Adjust border color */
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center; /* Center the content horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Include padding in total width and height */
+}
+
+#mobile-buttons img {
+    max-width: 100%;
+    max-height: 100%;
+}
+  /* Adjust the positioning based on the provided matrix */
+  .mobile-play {
+    grid-area: 2 / 2; /* Added for the Play button */
+  }
+
+  .mobile-up {
+    grid-area: 1 / 2;
+  }
+  
+  .mobile-down {
+    grid-area: 3 / 2;
+  }
+  
+  .mobile-left {
+    grid-area: 2 / 1;
+  }
+  
+  .mobile-right {
+    grid-area: 2 / 3;
+  }
+  
+  /* Add media query to display mobile buttons only on small screens */
+  @media screen and (max-width: 767px) {
+    #mobile-buttons {
+      display: grid;
+      grid-template-areas:
+        " . UP . "
+        " LEFT PLAY RIGHT "
+        " . DOWN . ";
+      align-items: center;
+      position: relative;
+      top: 0;
+      transform: none;
+    }
+  
+    #mobile-buttons button {
+      margin: 5px; /* Adjust spacing between buttons */
+    }
+  }
+  
