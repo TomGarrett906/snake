@@ -9,19 +9,13 @@ body {
     height: 100vh;
     margin: 0;
     font-family: "Orbitron", sans-serif;
-    background: url('/images/snakeskin.png');
+    background: linear-gradient(to bottom right, #05733c 10%, #5908aa 100%);
     background-size: cover;
     background-position: center;
   }
   
-
-/* body,
-.snake {
-  background-color: #414141;
-} */
-
 #game-board {
-  position: relative;
+  /* position: relative; */
   border-radius: 100px;
   display: grid;
   grid-template-columns: repeat(20, 20px);
@@ -93,14 +87,15 @@ body {
 .snake:first-child {
   background-color: #343727;
   scale: 135%;
-  border-radius: 45%;
+  border-radius: 35%;
+  border: #05733c 2px solid; 
 }
 
 .food {
-  background: url("/images/apple.png");
   background-size: cover;
-  scale: 135%;
-  /* border: #999 5px solid; */
+  background: red;
+  border-radius: 50%;
+
 }
 
 #logo {
@@ -111,6 +106,7 @@ body {
 
 /* MOBILE */
 #mobile-buttons {
+    display: none;
     position: absolute;
     top: 75%;
     left: 50%;
@@ -119,7 +115,7 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px;
 }
 
 #mobile-buttons button {
@@ -128,24 +124,24 @@ body {
     padding: 40px;
     width: 40px;
     height: 40px;
-    background-color: #c7c7c7; /* Adjust background color */
-    border: 1px solid #777; /* Adjust border color */
+    background-color: #c7c7c7;
+    border: 1px solid #777;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center; /* Center the content horizontally */
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box; /* Include padding in total width and height */
+    box-sizing: border-box; 
 }
 
 #mobile-buttons img {
     max-width: 100%;
     max-height: 100%;
 }
-  /* Adjust the positioning based on the provided matrix */
+
   .mobile-play {
-    grid-area: 2 / 2; /* Added for the Play button */
+    grid-area: 2 / 2;
   }
 
   .mobile-up {
@@ -164,10 +160,10 @@ body {
     grid-area: 2 / 3;
   }
   
-  /* Add media query to display mobile buttons only on small screens */
+  
   @media screen and (max-width: 767px) {
     #mobile-buttons {
-      display: grid;
+      display: none;
       grid-template-areas:
         " . UP . "
         " LEFT PLAY RIGHT "
@@ -179,7 +175,6 @@ body {
     }
   
     #mobile-buttons button {
-      margin: 5px; /* Adjust spacing between buttons */
+      margin: 5px;
     }
   }
-  
